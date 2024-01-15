@@ -7,24 +7,16 @@
  <body>
 <?php
 $pdo=new PDO('mysql:host=mysql220.phy.lolipop.lan;dbname=LAA1517434-final;charset=utf8','LAA1517434','tomoya10080525');
- ?>
-     <br><hr><br>
- <table>
-  <tr><th>商品番号</th><th>商品名</th><th>価格</th></tr>
-<?php  
- $sql=($pdo->prepare('delete FROM music WHERE id=?'));
-   if ($sql->execute([$_POST['music_id']])){
-       echo '削除に成功しました';
-   } else{
-       echo '削除に失敗しました';
-   }
+ 
+ 
 
- foreach($pdo->query('select * from music')as $row){
+ foreach($pdo->query('select * from music_table')as $row){
     echo '<tr>';
     echo '<td>',$row['music_id'],'</td>';
     echo '<td>',$row['music_name'],'</td>';
     echo '<td>',$row['artist_name'],'</td>';
     echo '<td>';
+    echo '<a href="musicdelete2.php"?id=' , $row['music_id'], '">削除</a>';
     echo '</td>';
     echo '</tr>';
     echo "\n";
@@ -34,7 +26,6 @@ $pdo=new PDO('mysql:host=mysql220.phy.lolipop.lan;dbname=LAA1517434-final;charse
     
 ?> 
 </table>
-        <button type="submit"> トップへ戻る</button>
     </form>
     </body>
 </html>

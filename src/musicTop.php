@@ -11,7 +11,7 @@
         <a href="musicselect.php">一覧</a>
         <a href="musictoroku.php">登録</a>
         <a href="musicupdate.php">更新</a>
-        <a href="musicdelete.php">削除</a>
+        <a href="musicdelete1.php">削除</a>
 
 </body>
 </html>
