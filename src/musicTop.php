@@ -7,11 +7,11 @@
 </head>
 <body>
 <h2>楽曲管理メニュー</h2>
-    <form action="music.php" method="post">
-        <button type="submit" name="select">一覧</button>
-        <button type="submit" name="insert">登録</button>
-        <button type="submit" name="update">更新</button>
-        <button type="submit" name="delete">削除</button>
-    </form>
+    
+        <a href="musicselect.php">一覧</a>
+        <a href="musictoroku.php">登録</a>
+        <a href="musicupdate.php">更新</a>
+        <a href="musicdelete.php">削除</a>
+
 </body>
 </html>
