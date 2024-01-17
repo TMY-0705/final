@@ -7,17 +7,15 @@
  <body>
 <?php
     $pdo=new PDO('mysql:host=mysql220.phy.lolipop.lan;dbname=LAA1517434-final;charset=utf8','LAA1517434','tomoya10080525');
-     $sql=$pdo->prepare('update music_table set name=?,price=?where id=?');
+     $sql=$pdo->prepare('update music_table set music_name=?, artist_name=? where music_id=?');
 
-     $sql=$pdo->prepare('INSERT INTO music_table (music_id,music_name,artist_name)values(?,?,?)');
-     if(!preg_match('/^\d+$/',$_POST['music_
-     id'])){
+     if(!preg_match('/^\d+$/',$_POST['music_id'])){
          echo'楽曲IDで入力してください';
      }else if(empty($_POST['music_name'])){
              echo '楽曲名を入力してください';
          }else if(empty($_POST['artist_name'])){
              echo'アーティスト名を入力してください';
-         }else if($sql->execute([$_POST['music_id'],$_POST['music_name'],$_POST['artist_name']])){
+         }else if($sql->execute([$_POST['music_name'],$_POST['artist_name'], $_POST['music_id']])){
              echo'<font color="red">更新に成功しました。</font>';
          }else{
              echo'<font color="red">更新に失敗しました。</font>';
@@ -40,5 +38,6 @@ foreach ($pdo->query('select * from music_table') as $row) {
 ?>
         </table>
         <button onclick="location.href='musicupdate.php'">更新画面へ戻る</button>
+        <button onclick="location.href='musictop.php'">トップへ戻る</button>
     </body>
 </html>

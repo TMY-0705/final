@@ -37,8 +37,8 @@
     }
     ?>
     </table>
-    <form action="musictoroku.php"method="post">
-        <button type="submit">追加画面に戻る</button>
+    <button onclick="location.href='musictoroku.php'">追加画面に戻る</button>
+    <button onclick="location.href='musictop.php'">トップへ戻る</button>
 </form>
 </body>
 </html>
