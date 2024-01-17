@@ -5,6 +5,7 @@
   <title>final</title>
  </head>
  <body>
+    <table>
 <?php
 $pdo=new PDO('mysql:host=mysql220.phy.lolipop.lan;dbname=LAA1517434-final;charset=utf8','LAA1517434','tomoya10080525');
  
@@ -16,7 +17,7 @@ $pdo=new PDO('mysql:host=mysql220.phy.lolipop.lan;dbname=LAA1517434-final;charse
     echo '<td>',$row['music_name'],'</td>';
     echo '<td>',$row['artist_name'],'</td>';
     echo '<td>';
-    echo '<a href="musicdelete2.php"?id=' , $row['music_id'], '">削除</a>';
+    echo '<a href="musicdelete2.php?id=', $row['music_id'], '">削除</a>';
     echo '</td>';
     echo '</tr>';
     echo "\n";

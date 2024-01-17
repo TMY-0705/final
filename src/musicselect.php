@@ -7,7 +7,7 @@
 </head>
 <body>
 <h2>楽曲一覧</h2>
-<a href="CRUD-menu.php">メニューに戻る</a>
+<button onclick="location.href='musictop.php'">トップへ戻る</button>
 
 <?php
 $pdo=new PDO('mysql:host=mysql220.phy.lolipop.lan;dbname=LAA1517434-final;charset=utf8','LAA1517434','tomoya10080525');

@@ -5,32 +5,22 @@
   <title>final</title>
  </head>
  <body>
+<table>
 <?php
 $pdo=new PDO('mysql:host=mysql220.phy.lolipop.lan;dbname=LAA1517434-final;charset=utf8','LAA1517434','tomoya10080525');
  
- $sql=($pdo->prepare('delete FROM music WHERE id=?'));
-   if ($sql->execute([$_GET['music_id']])){
+ $sql=($pdo->prepare('delete FROM music_table WHERE music_id=?'));
+   if ($sql->execute([$_GET['id']])){
        echo '削除に成功しました';
    } else{
        echo '削除に失敗しました';
    }
 
- foreach($pdo->query('select * from music')as $row){
-    echo '<tr>';
-    echo '<td>',$row['music_id'],'</td>';
-    echo '<td>',$row['music_name'],'</td>';
-    echo '<td>',$row['artist_name'],'</td>';
-    echo '<td>';
-    echo '</td>';
-    echo '</tr>';
-    echo "\n";
-}
-
  
     
 ?> 
 </table>
-        <button type="submit"> トップへ戻る</button>
+        <button type="submit"><a href="musictop.php">トップへ戻る</button>
     </form>
     </body>
 </html>
